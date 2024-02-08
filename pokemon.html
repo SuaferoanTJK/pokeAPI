@@ -59,10 +59,25 @@
       </button>
     </div>
 
-    <section id="section_body" class="container text-center">
-      <h2 class="titulo text-center">Pokemon</h2>  
+    <section id="section_body" class="container">
+      <h2 class="titulo text-center">Pokemon</h2>
+      <div class="d-flex flex-column mb-3">
+        <label for="email">Pokemon para mostrar <span class="required">*</span></label>
+        <select id="select_input" onchange="getPokemon()">
+          <option value="" selected>-- Seleccionar --</option>
+          <option value="1">Bulbasaur</option>
+          <option value="4">Charmander</option>
+          <option value="7">Squirtle</option>
+          <option value="10">Caterpie</option>
+          <option value="16">Pidgey</option>
+          <option value="19">Rattata</option>
+        </select>
+      </div> 
+      <div id="pokemon_container"></div>
+      <div id="alert_container"></div>
     </section>
         
     <script src="functions.js"></script>
+    <script src="requests.js"></script>
 </body>
 </html>
