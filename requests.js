@@ -13,18 +13,31 @@ const getPokemon = () => {
     })
     .then(data => {
         const pokemonData = {
-            abilities: data.abilities.map(item => item.ability.name),
+            abilities: data.abilities.map(item => item.ability.name).join(", "),
             baseXp: data.base_experience,
             height: data.height,
+            name: data.name,
             stats: data.stats.map(item => ({name: item.stat.name, value: item.base_stat })),
-            type: data.types.map(item => item.type.name),
+            type: data.types.map(item => item.type.name).join(", "),
             weight: data.weight,
             sprite: data.sprites.other.home.front_default
         }       
         alertContainer.innerHTML = '';
         pokemonContainer.innerHTML = `
-            <div class="d-flex flex-column gap-2">
-                <img width="300" src='${pokemonData.sprite}' alt="pokemon_sprite"/>
+            <div class="card" style="width: 100%;">
+                <div class="w-100 d-flex align-items-center p-3">
+                    <div class="w-50 d-flex justify-content-center">
+                        <img height="auto" src='${pokemonData.sprite}' alt="pokemon_sprite"/>
+                    </div>
+                    <div class="w-50 d-flex flex-column">
+                        <h3 class="card-title">${pokemonData.name}</h3>
+                        <p class="card-text fw-bold m-0 p-0">Habilidades: <span class="fw-normal">${pokemonData.abilities}</span></p>
+                        <p class="card-text fw-bold m-0 p-0">Experiencia base: <span class="fw-normal">${pokemonData.baseXp}</span></p>
+                        <p class="card-text fw-bold m-0 p-0">Altura: <span class="fw-normal">${pokemonData.height}</span></p>
+                        <p class="card-text fw-bold m-0 p-0">Tipo: <span class="fw-normal">${pokemonData.type}</span></p>
+                        <p class="card-text fw-bold m-0 p-0 mb-3">Peso: <span class="fw-normal">${pokemonData.weight}</span></p>
+                    </div>
+                </div>
             </div>
         `;
         console.log({data, pokemonData});
