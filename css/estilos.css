@@ -1,3 +1,11 @@
+:root {
+    --gray: hsl(0, 0%, 74%);
+    --red: hsl(0, 95%, 44%);
+    --white: hsl(100, 100%, 100%);
+    --yellowish: hsl(60, 100%, 33%);
+  }
+
+
 body {
     padding-top: 56px;
 }
@@ -28,12 +36,27 @@ body {
     max-height: 100%;
 }
 .bg_fcolor{
-    background-color: rgb(249, 249, 249);
+    background-color: var(--white);
 }
 .form_body{
     padding: 20px;
 }
 .inp_login{
     /*background-color: rgb(168, 154, 0);*/
-    border: 1px rgb(169, 169, 0) solid;
+    border: 1px var(--yellowish) solid;
+}
+
+.usernameLogged {
+    color: var(--gray);
+}
+
+.input_error{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: var(--red);
+}
+
+.required{
+    color: var(--red)
 }
