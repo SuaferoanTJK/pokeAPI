@@ -40,7 +40,6 @@ const getPokemon = () => {
                 </div>
             </div>
         `;
-        console.log({data, pokemonData});
     })
     .catch(() => {
         pokemonContainer.innerHTML = ''

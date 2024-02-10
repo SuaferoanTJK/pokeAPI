@@ -42,7 +42,6 @@ body {
     padding: 20px;
 }
 .inp_login{
-    /*background-color: rgb(168, 154, 0);*/
     border: 1px var(--yellowish) solid;
 }
 

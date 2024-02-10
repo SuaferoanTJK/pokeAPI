@@ -4,6 +4,9 @@ let loginData = {
 }
 
 const storeValue = (input, form) => {
+    const alertContainer = document.getElementById("alert_container");
+    alertContainer.innerHTML = ''
+
     const regexValidation = {
         email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
         password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
@@ -27,6 +30,11 @@ const storeValue = (input, form) => {
 }
 
 const login = () => {
+    const alertContainer = document.getElementById("alert_container");
+    if(loginData.email === "" || loginData.password === ""){
+        alertContainer.innerHTML = '<div class="alert alert-warning mt-4" role="alert">No ha ingresado los datos para poder loguearse</div>'
+    }
+
     sessionStorage.setItem('email', loginData.email)
     sessionStorage.setItem('password', loginData.password)
 
@@ -37,10 +45,7 @@ const login = () => {
 }
 
 const logout = () => {
-    console.log("Hacer limpieza de sessionStorage");
     sessionStorage.clear();
-    sessionStorage.removeItem('email');
-    sessionStorage.removeItem('password');
     window.location.href = "login.html"
 }
 
