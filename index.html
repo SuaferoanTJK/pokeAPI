@@ -62,61 +62,85 @@
     <section id="section_body" class="container text-center">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card">
+          <div class="card h-100">
             <img src="img/poke01.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Bulbasaur</h5>
               <p class="card-text">Durante algún tiempo después de su nacimiento, utiliza los nutrientes que se encuentran en la semilla que tiene en la espalda para poder crecer.</p>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirModal('poke01modal')">Evolución</button>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
+          <div class="card h-100">
             <img src="img/poke02.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Charizard</h5>
-              <p class="card-text">Si Charizard se enoja mucho, la llama en la punta de su cola arde en un tono azul claro.<br><br></p>
+              <p class="card-text">Si Charizard se enoja mucho, la llama en la punta de su cola arde en un tono azul claro.</p>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirModal('poke02modal')">Evolución</button>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
+          <div class="card h-100">
             <img src="img/poke03.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Butterfree</h5>
               <p class="card-text">Le encanta el néctar de las flores y puede localizar parches florales que tienen incluso pequeñas cantidades de polen.</p>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirModal('poke03modal')">Evolución</button>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
+          <div class="card h-100">
             <img src="img/poke04.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Pikachu</h5>
-              <p class="card-text">Cuando se enoja, descarga inmediatamente la energía almacenada en las bolsas de sus mejillas.<br><br></p>
+              <p class="card-text">Cuando se enoja, descarga inmediatamente la energía almacenada en las bolsas de sus mejillas.</p>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirModal('poke04modal')">Evolución</button>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
+          <div class="card h-100">
             <img src="img/poke05.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Slowpoke</h5>
-              <p class="card-text">Es increíblemente lento y tonto. Le toma cinco segundos sentir dolor cuando es atacado.<br><br></p>
+              <p class="card-text">Es increíblemente lento y tonto. Le toma cinco segundos sentir dolor cuando es atacado.</p>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirModal('poke05modal')">Evolución</button>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card">
+          <div class="card h-100">
             <img src="img/poke06.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Lapras</h5>
-              <p class="card-text">Transporta personas a través del mar sobre su espalda. Puede emitir un grito encantador si está de buen humor.</p>
+              <h5 class="card-title">Squirtle</h5>
+              <p class="card-text">Después del nacimiento, su espalda se hincha y se endurece hasta formar un caparazón. Lanza una potente espuma por la boca.</p>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirModal('poke06modal')">Evolución</button>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Evolución</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img id="imagenModal" src="" class="img-fluid card-img-top">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
       
     <script src="functions.js"></script>
   </body>

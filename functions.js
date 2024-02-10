@@ -38,6 +38,10 @@ const login = () => {
 
 const logout = () => {
     console.log("Hacer limpieza de sessionStorage");
+    sessionStorage.clear();
+    sessionStorage.removeItem('email');
+    sessionStorage.removeItem('password');
+    window.location.href = "login.html"
 }
 
 const isUserLogged = (page) => {
@@ -50,6 +54,12 @@ const isUserLogged = (page) => {
     if(!isLogged) {
         container.innerHTML = `<a class='nav-link ${page === "login" ? "active" : ""}' href="login.html">Iniciar sesión</a>`
     } else {
-        container.innerHTML = `<div class="ms-2 d-flex align-items-center gap-1 usernameLogged"><p class="p-0 m-0">Hola, ${email}</p><button class="ms-3" onclick="logout()">Cerrar sesión</button></div>`
+        container.innerHTML = `<div class="ms-2 d-flex align-items-center gap-1 usernameLogged"><p class="p-0 m-0">Hola, ${email}</p><button class="ms-3 btn btn-info btn-sm" onclick="logout()">Cerrar sesión</button></div>`
     }
+}
+
+const abrirModal = (mensaje) => {
+    let nombreArchivo = 'img/' + mensaje + '.jpg';
+    document.getElementById('imagenModal').src = nombreArchivo;
+    $('#miModal').modal('show');
 }

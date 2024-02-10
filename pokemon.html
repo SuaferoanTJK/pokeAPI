@@ -61,18 +61,21 @@
 
     <section id="section_body" class="container">
       <h2 class="titulo text-center">Pokemon</h2>
-      <div class="d-flex flex-column mb-3">
-        <label for="email">Pokemon para mostrar <span class="required">*</span></label>
-        <select id="select_input" onchange="getPokemon()">
-          <option value="" selected>-- Seleccionar --</option>
-          <option value="1">Bulbasaur</option>
-          <option value="4">Charmander</option>
-          <option value="7">Squirtle</option>
-          <option value="10">Caterpie</option>
-          <option value="16">Pidgey</option>
-          <option value="19">Rattata</option>
-        </select>
-      </div> 
+      <form class="form-control bg_fcolor form_body">
+        <div class="d-flex flex-column mb-3">
+          <label for="email">Pokemon para mostrar <span class="required">*</span></label>
+          <select id="select_input" class="form-control form-select inp_login" onchange="getPokemon()">
+            <option value="" selected>-- Seleccionar --</option>
+            <option value="1">Bulbasaur</option>
+            <option value="4">Charmander</option>
+            <option value="7">Squirtle</option>
+            <option value="10">Caterpie</option>
+            <option value="16">Pidgey</option>
+            <option value="19">Rattata</option>
+          </select>
+        </div> 
+      </form>
+      <br>
       <div id="pokemon_container"></div>
       <div id="alert_container"></div>
     </section>
