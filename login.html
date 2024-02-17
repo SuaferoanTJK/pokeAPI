@@ -67,11 +67,11 @@
             <label for="email">Correo <span class="required">*</span></label>
             <input 
               type="text"
-              id="email"
-              aria-describedby="email"
+              id="email1"
+              aria-describedby="email1"
               placeholder="Ingrese el correo"
               class="form-control inp_login"
-              onchange="storeValue({name: 'email', value: this.value}, 'login')"
+              onchange="storeValue({name: 'email1', value: this.value}, 'login')"
             />
             <p class="input_error"></p>
           </div>
@@ -80,6 +80,7 @@
             <input 
               type="password"
               id="password"
+              aria-describedby="password"
               class="form-control inp_login"
               placeholder="Ingrese la contraseña"
               onchange="storeValue({name: 'password', value: this.value}, 'login')"
