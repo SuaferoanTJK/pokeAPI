@@ -89,16 +89,7 @@ const loadData = (page) => {
     let isLogged = false;
     const email = sessionStorage.getItem('email')
     const password = sessionStorage.getItem('password')
-    const containerLogin = document.getElementById("navbarOption")
-
-    let isContact = false;
-    const nomape = localStorage.getItem('nomape')
-    const emailContact = localStorage.getItem('email')
-    const address = localStorage.getItem('address')
-    const distrito = localStorage.getItem('distrito')
-    const telefono = localStorage.getItem('telefono')
-    const containerContact = document.getElementById("dataFormContact")
-    
+    const containerLogin = document.getElementById("navbarOption")   
     if(email && password) isLogged = true;
 
     if(!isLogged) {
@@ -107,21 +98,34 @@ const loadData = (page) => {
         containerLogin.innerHTML = `<div class="ms-2 d-flex align-items-center gap-1 usernameLogged"><p class="p-0 m-0">Hola, ${email}</p><button class="ms-3 btn btn-info btn-sm" onclick="logout()">Cerrar sesión</button></div>`
     }
     
-    if(nomape && emailContact && address && distrito && telefono) isContact = true;
+    
 
-    if(!isContact){
-        containerContact.innerHTML = ``   
-    } else {
-        containerContact.innerHTML = `
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Datos enviados mediante el formulario de contacto:</strong><br>
-            Nombre: ${nomape}<br>
-            Correo electrónico: ${emailContact}<br>
-            Dirección: ${address} | Distrito: ${distrito}<br>
-            Teléfono: ${telefono}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="localStorage.clear()"></button>
-        </div>`
+    if(page === "home"){
+        const containerContact = document.getElementById("dataFormContact")
+        
+        let isContact = false;
+        const nomape = localStorage.getItem('nomape')
+        const emailContact = localStorage.getItem('email')
+        const address = localStorage.getItem('address')
+        const distrito = localStorage.getItem('distrito')
+        const telefono = localStorage.getItem('telefono')
+        if(nomape && emailContact && address && distrito && telefono) isContact = true;
+
+        if(!isContact){
+            containerContact.innerHTML = ``   
+        } else {
+            containerContact.innerHTML = `
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Datos enviados mediante el formulario de contacto:</strong><br>
+                Nombre: ${nomape}<br>
+                Correo electrónico: ${emailContact}<br>
+                Dirección: ${address} | Distrito: ${distrito}<br>
+                Teléfono: ${telefono}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="localStorage.clear()"></button>
+            </div>`
+        }
     }
+
 }
 
 const logout = () => {
